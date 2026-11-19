@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUZFREEDIVING | 프리다이빙 교육 신청서</title>
+  <meta name="description" content="부산·울산·양산·창원·밀양·고성 | AIDA 트레이너와 함께하는 안전하고 체계적인 프리다이빙" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LUZFREEDIVING 프리다이빙 교육 신청서" />
+  <meta property="og:description" content="AIDA 트레이너와 함께하는 안전하고 체계적인 프리다이빙 교육 및 크루 모집" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Inter:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ocean-top: #0f3b5c;
+      --ocean-mid: #1a587e;
+      --ocean-deep: #134466;
+      --navy-accent: #16486b;
+      --navy-dark: #0f344f;
+      --bg-page: #f1f5f9;
+      --card-bg: #ffffff;
+      --border-default: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --badge-popular-bg: #e0f2fe;
+      --badge-popular-text: #0369a1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 96px;
+    }
+
+    .app-shell {
+      max-width: 480px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background-color: var(--bg-page);
+      position: relative;
+    }
+
+    /* Hero Header */
+    .hero {
+      background: linear-gradient(160deg, var(--ocean-top) 0%, var(--ocean-mid) 55%, #236a91 100%);
+      color: #ffffff;
+      padding: 32px 22px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 85% 20%, rgba(125, 211, 252, 0.18), transparent 55%);
+      pointer-events: none;
+    }
+
+    .official-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(6px);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #e0f2fe;
+      margin-bottom: 16px;
+    }
+
+    .official-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #7dd3fc;
+      display: inline-block;
+    }
+
+    .hero-brand {
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .hero-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 4px;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.6;
+    }
+
+    /* Main Sheet */
+    .form-sheet {
+      background: var(--card-bg);
+      border-radius: 24px 24px 0 0;
+      margin-top: -28px;
+      position: relative;
+      z-index: 2;
+      padding: 26px 20px 32px;
+      box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    .section-block + .section-block {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background-color: var(--navy-accent);
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .required-star {
+      color: #ef4444;
+      margin-left: 2px;
+    }
+
+    .section-hint {
+      font-size: 12px;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    /* Course Radio Cards */
+    .course-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .course-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 16px;
+      border: 1.5px solid var(--border-default);
+      border-radius: 14px;
+      background-color: #ffffff;
+      cursor: pointer;
+      transition: border-color 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease;
+      text-align: left;
+      width: 100%;
+    }
+
+    .course-card:hover {
+      border-color: #94a3b8;
+    }
+
+    .course-card.selected {
+      border-color: var(--navy-accent);
+      background-color: #f8fbff;
+      box-shadow: 0 2px 10px rgba(22, 72, 107, 0.08);
+    }
+
+    .course-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .course-name-row {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .course-name {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .popular-tag {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background-color: var(--badge-popular-bg);
+      color: var(--badge-popular-text);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .course-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.45;
+    }
+
+    .radio-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #cbd5e1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.16s ease;
+    }
+
+    .course-card.selected .radio-circle {
+      border-color: var(--navy-accent);
+    }
+
+    .radio-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--navy-accent);
+      transform: scale(0);
+      transition: transform 0.15s ease;
+    }
+
+    .course-card.selected .radio-dot {
+      transform: scale(1);
+    }
+
+    /* Applicant Form Fields */
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+
+    .text-input,
+    .select-input,
+    .textarea-input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border-default);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--text-main);
+      background-color: #ffffff;
+      transition: border-color 0.15s ease;
+    }
+
+    .text-input:focus,
+    .select-input:focus,
+    .textarea-input:focus {
+      outline: none;
+      border-color: var(--navy-accent);
+    }
+
+    .textarea-input {
+      resize: vertical;
+      min-height: 76px;
+    }
+
+    .error-msg {
+      color: #dc2626;
+      font-size: 12.5px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .error-msg.visible {
+      display: block;
+    }
+
+    /* Fixed Bottom CTA */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid #e2e8f0;
+      padding: 12px 16px;
+      z-index: 20;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: var(--navy-accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 13px;
+      padding: 15px 20px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.16s ease, transform 0.1s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--navy-dark);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.99);
+    }
+
+    /* Confirmation Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 50;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 380px;
+      border-radius: 20px;
+      padding: 24px 20px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 8px;
+    }
+
+    .modal-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .summary-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #334155;
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .modal-close-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: var(--navy-accent);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="official-pill">
+        <span class="official-dot"></span>
+        <span>AIDA INTERNATIONAL OFFICIAL</span>
+      </div>
+      <div class="hero-brand">LUZFREEDIVING</div>
+      <h1 class="hero-title">프리다이빙 교육 신청서</h1>
+      <p class="hero-sub">
+        부산 · 울산 · 양산 · 창원 · 밀양 · 고성<br />
+        AIDA 트레이너와 함께하는 안전하고 체계적인 프리다이빙
+      </p>
+    </header>
+
+    <main class="form-sheet">
+      <form id="applicationForm" method="post" novalidate>
+        <input type="hidden" name="course" id="selectedCourse" value="AIDA 2 (초급 정규)" />
+        <section class="section-block">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="step-badge">1</span>
+              <h2 class="section-title">희망 교육 과정<span class="required-star">*</span></h2>
+            </div>
+            <span class="section-hint">1개 선택</span>
+          </div>
+
+          <div class="course-list" id="courseList" role="radiogroup" aria-label="희망 교육 과정">
+            <button type="button" class="course-card" data-course="체험 다이빙 (원데이)" role="radio" aria-checked="false">
+              <div class="course-info">
+                <div class="course-name-row">
+                  <span class="course-name">체험 다이빙 (원데이)</span>
+                </div>
+                <p class="course-desc">물과 친해지기 · 기본 호흡 및 잠수 체험 (약 2~3시간)</p>
+              </div>
+              <span class="radio-circle"><span class="radio-dot"></span></span>
+            </button>
+
+            <button type="button" class="course-card" data-course="AIDA 1 (입문 과정)" role="radio" aria-checked="false">
+              <div class="course-info">
+                <div class="course-name-row">
+                  <span class="course-name">AIDA 1 (입문 과정)</span>
+                </div>
+                <p class="course-desc">이론 + 제한수역(풀장) 1세션 · 수영 못해도 가능</p>
+              </div>
+              <span class="radio-circle"><span class="radio-dot"></span></span>
+            </button>
+
+            <button type="button" class="course-card selected" data-course="AIDA 2 (초급 정규)" role="radio" aria-checked="true">
+              <div class="course-info">
+                <div class="course-name-row">
+                  <span class="course-name">AIDA 2 (초급 정규)</span>
+                  <span class="popular-tag">인기</span>
+                </div>
+                <p class="course-desc">이론 + 풀장 2세션 + 개방수역(바다) 3세션</p>
+              </div>
+              <span class="radio-circle"><span class="radio-dot"></span></span>
+            </button>
+
+            <button type="button" class="course-card" data-course="AIDA 3 / AIDA 4 (중·상급)" role="radio" aria-checked="false">
+              <div class="course-info">
+                <div class="course-name-row">
+                  <span class="course-name">AIDA 3 / AIDA 4 (중·상급)</span>
+                </div>
+                <p class="course-desc">심화 이퀄라이징(프렌젤, 마우스필) 및 수심 트레이닝</p>
+              </div>
+              <span class="radio-circle"><span class="radio-dot"></span></span>
+            </button>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="step-badge">2</span>
+              <h2 class="section-title">신청자 정보<span class="required-star">*</span></h2>
+            </div>
+            <span class="section-hint">필수 입력</span>
+          </div>
+
+          <div class="field-group">
+            <div>
+              <label class="field-label" for="applicantName">이름</label>
+              <input class="text-input" id="applicantName" name="name" maxlength="100" type="text" placeholder="홍길동" required />
+            </div>
+
+            <div>
+              <label class="field-label" for="applicantContact">연락처 또는 카카오톡 ID</label>
+              <input class="text-input" id="applicantContact" name="contact" maxlength="150" type="text" placeholder="010-0000-0000" required />
+            </div>
+
+            <div>
+              <label class="field-label" for="preferredRegion">희망 교육 지역</label>
+              <select class="select-input" id="preferredRegion" name="region">
+                <option value="부산">부산</option>
+                <option value="울산">울산</option>
+                <option value="양산">양산</option>
+                <option value="창원">창원</option>
+                <option value="밀양">밀양</option>
+                <option value="고성">고성</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="field-label" for="applicantNote">희망 일정 / 문의사항 (선택)</label>
+              <textarea class="textarea-input" id="applicantNote" name="note" maxlength="1000" placeholder="주말 오전 희망, 장비 대여 여부 등 자유롭게 작성해 주세요."></textarea>
+            </div>
+          </div>
+
+          <p class="error-msg" id="formError" role="alert">이름과 연락처(또는 카카오톡 ID)를 입력해 주세요.</p>
+        </section>
+      </form>
+    </main>
+
+    <div class="bottom-bar">
+      <button type="submit" form="applicationForm" class="submit-btn">교육 신청하기 &rarr;</button>
+    </div>
+  </div>
+
+  <script>
+    const endpoint = "https://script.google.com/macros/s/AKfycbx6g6-NdUWj-itkk0vgdeBDpDoLVB5TC1zM2eQ--A33o95EVltUmAdqnNLhtekY-o2K/exec"; // Paste the deployed Apps Script /exec URL here.
+    const form = document.getElementById("applicationForm");
+    const error = document.getElementById("formError");
+    const course = document.getElementById("selectedCourse");
+    const cards = document.querySelectorAll(".course-card");
+    const submit = document.querySelector(".submit-btn");
+
+    cards.forEach(function (card) {
+      card.addEventListener("click", function () {
+        cards.forEach(function (item) {
+          item.classList.toggle("selected", item === card);
+          item.setAttribute("aria-checked", String(item === card));
+        });
+        course.value = card.dataset.course;
+      });
+    });
+
+    form.addEventListener("submit", function (event) {
+      const name = form.elements.namedItem("name").value.trim();
+      const contact = form.elements.namedItem("contact").value.trim();
+      const endpointReady = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(endpoint);
+      if (!endpointReady || !name || !contact) {
+        event.preventDefault();
+        error.textContent = endpointReady
+          ? "이름과 연락처(또는 카카오톡 ID)를 입력해 주세요."
+          : "신청 접수를 준비 중입니다.";
+        error.classList.add("visible");
+        return;
+      }
+      form.action = endpoint;
+      error.classList.remove("visible");
+      submit.disabled = true;
+    });
+
+    window.addEventListener("pageshow", function () {
+      submit.disabled = false;
+    });
+  </script>
+</body>
+</html>
